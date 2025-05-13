@@ -1,54 +1,78 @@
-# React + TypeScript + Vite
+# Solana Wallet Generator (Devnet)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple web-based tool built with **React + TypeScript** to generate a mnemonic (seed phrase) and derive Solana wallet addresses using the BIP-44 path format, specifically for **Solana Devnet**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Generate BIP-39 compliant mnemonic (seed phrase)
+- Derive Solana wallet public keys using BIP-44 path
+- Built on Devnet for safe testing
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Preview
+
+<p align="center">
+  <img width="555" alt="App Preview" src="https://github.com/user-attachments/assets/e562c285-225e-4392-9d13-275785803690" />
+</p>
+
+---
+
+## Tech Stack
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Solana Web3.js](https://solana-labs.github.io/solana-web3.js/)
+- [bip39](https://github.com/bitcoinjs/bip39)
+- [tweetnacl](https://github.com/dchest/tweetnacl-js)
+- [ed25519-hd-key](https://github.com/paulmillr/ed25519-hd-key)
+
+---
+
+## Getting Started
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yourusername/solana-wallet-generator
+   cd solana-wallet-generator
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Visit the app**
+
+   ```
+   http://localhost:5173
+   ```
+
+---
+
+## Folder Structure
+
+```
+src/
+├── components/
+│   ├── MnemonicGenerator.tsx
+│   └── SolanaWallet.tsx
+├── services/
+│   └── solanaUtils.ts
+├── App.tsx
+└── App.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
