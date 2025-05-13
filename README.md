@@ -28,7 +28,6 @@ A simple web-based tool built with **React + TypeScript** to generate a mnemonic
 - [Solana Web3.js](https://solana-labs.github.io/solana-web3.js/)
 - [bip39](https://github.com/bitcoinjs/bip39)
 - [tweetnacl](https://github.com/dchest/tweetnacl-js)
-- [ed25519-hd-key](https://github.com/paulmillr/ed25519-hd-key)
 
 ---
 
